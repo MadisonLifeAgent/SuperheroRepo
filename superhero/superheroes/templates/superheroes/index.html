@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Superheroes List</h1>
+
+        <ul>
+            {% for hero in all_superheroes %}
+            <li><h3> {{hero.name}} {% if hero.name == "Doug the Pug" %} - WOOF! WOOF! {% endif %}</h3></li>
+            {% endfor %}
+        </ul>
 </body>
 </html>
