@@ -8,7 +8,6 @@ class Superhero(models.Model):
     primary_superpower = models.CharField(max_length=50)
     secondary_superpower = models.CharField(max_length=50)
     catchphrase = models.CharField(max_length=50)
-    rating = models.IntegerField()
 
     def __str__(self):
         return self.name
