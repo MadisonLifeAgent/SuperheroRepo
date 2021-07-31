@@ -11,11 +11,11 @@
     <form action="{% url 'superheroes:new_superhero' %}" method="post">
         {% csrf_token %}
 
-        Name:<input type="text" name="name" id="name"><br>
-        Alter Ego:<input type="text" name="alter_ego" id="alter_ego"><br>
-        Primary Superpower:<input type="text" name="primary_superpower" id="primary_superpower"><br>
-        Secondary Superpower:<input type="text" name="secondary_superpower" id="secondary_superpower"><br>
-        Catchphrase:<input type="text" name="catchphrase" id="catchphrase"><br>
+        Name:  <input type="text" name="name" id="name"><br>
+        Alter Ego:  <input type="text" name="alter_ego" id="alter_ego"><br>
+        Primary Superpower:  <input type="text" name="primary_superpower" id="primary_superpower"><br>
+        Secondary Superpower:  <input type="text" name="secondary_superpower" id="secondary_superpower"><br>
+        Catchphrase:  <input type="text" name="catchphrase" id="catchphrase"><br>
         <input type="submit" value="Add Superhero">
     </form>
 </body>

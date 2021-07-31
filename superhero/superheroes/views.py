@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 #import our class/model
 from .models import Superhero
+from django.urls import reverse
 
 
 # Create your views here.
@@ -22,3 +23,21 @@ def detail(request, superhero):
     }
     #helps sends query results to template for display
     return render(request, 'superheroes/detail.html', context)
+
+# adds a new superhero to database
+def create(request):
+    if request.method == "POST":
+        #grabs input from form fields
+        name = request.POST.get('name')
+        alter_ego = request.POST.get('alter_ego')
+        primary_superpower = request.POST.get('primary_superpower')
+        secondary_superpower = request.POST.get('secondary_superpower')
+        catchphrase = request.POST.get('catchphrase')
+
+        #input is used to create and save a new superhero in to database
+        new_superhero = Superhero(name=name, alter_ego=alter_ego, primary_superpower=primary_superpower, secondary_superpower=secondary_superpower, catchphrase=catchphrase)
+        new_superhero.save()
+
+        return HttpResponseRedirect(reverse('superheroes:index'))
+    else:
+        return render(request, 'superheroes/create.html')
