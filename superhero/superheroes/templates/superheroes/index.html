@@ -12,9 +12,11 @@
         <ul>
             <!-- Display Superhero list using results from query -->
             {% for hero in all_superheroes %}
-            <li><h3> {{hero.name}} </h3></li>
-            <!-- Details page link for each superhero-->
+            <!-- Display Superhero name and Details page link -->
+            <li>{{hero.name}}</li>
             <button><a href="{% url 'superheroes:detail' hero.id %}">Details</a></button>
+            <br>
+            <br>
             {% endfor %}
         </ul>
 </body>
