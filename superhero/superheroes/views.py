@@ -13,3 +13,12 @@ def index(request):
     }
     #sends the query result(s) to urls.py for display (or to the template)
     return render(request, 'superheroes/index.html', context)
+
+# queries db for details about each superhero
+def details(request, superhero):
+    superhero = Superhero.objects.get(id)
+    context = {
+        'superhero': superhero
+    }
+    #helps sends query results to template for display
+    return render(request, 'superheroes/detail.html', context)
