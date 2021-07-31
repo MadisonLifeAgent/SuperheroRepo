@@ -10,5 +10,8 @@ urlpatterns = [
     path('<int:superhero>/', views.detail, name='detail'),
 
     #helps display create page
-    path('create/', views.create, name='new_superhero')
+    path('create/', views.create, name='new_superhero'),
+
+    #helps display delete page
+    path('<int:superhero>/', views.delete, name='delete')
 ]

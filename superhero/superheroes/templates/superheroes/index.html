@@ -15,11 +15,14 @@
             <!-- Display Superhero name and Details page link -->
             <li>{{hero.name}}</li>
             <button><a href="{% url 'superheroes:detail' hero.id %}">Details</a></button>
-            <br>
-            <br>
+            
+                <!-- Delete a superhero button -->
+            <button><a href="{% url 'superheroes:delete' hero.id %}">Delete Superhero</a></button>
             {% endfor %}
         </ul>
-
+    
+    <!-- Add a superhero button -->
     <button><a href="{% url 'superheroes:new_superhero' %}">Add a Superhero</a></button>
+
 </body>
 </html>
