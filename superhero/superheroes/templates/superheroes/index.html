@@ -10,8 +10,9 @@
     <h1>Superheroes List</h1>
 
         <ul>
+            <!-- Display Superhero list using results from query -->
             {% for hero in all_superheroes %}
-            <li><h3> {{hero.name}} {% if hero.name == "Doug the Pug" %} - WOOF! WOOF! {% endif %}</h3></li>
+            <li><h3> {{hero.name}} </h3></li>
             {% endfor %}
         </ul>
 </body>
