@@ -15,8 +15,8 @@ def index(request):
     return render(request, 'superheroes/index.html', context)
 
 # queries db for details about each superhero
-def details(request, superhero):
-    superhero = Superhero.objects.get(id)
+def detail(request, superhero):
+    superhero = Superhero.objects.get(id = superhero)
     context = {
         'superhero': superhero
     }
