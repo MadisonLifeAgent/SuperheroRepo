@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +12,14 @@
 </head>
 <body>
     <div class="container p-4 bg-primary text-white">
-        <h1>Superheroes List</h1>
+        <h1 class="text-center">Superheroes List</h1>
     </div>
 
     <div class="container p-2">
         <!-- image of favorite superhero -->
         {% load static %}
         <img src="{% static 'images/loki.jpg' %}" alt="Loki, God of Mischief" class="rounded mx-auto d-block img-thumbnail" width="75%" height="auto">
+        <h3 class="text-center font-weight-bold">"Your savior is here!"</h3>
     </div>
 
     <div class="container p-4">
@@ -29,6 +28,7 @@
                     
                     <!-- Display Superhero list using results from query -->
                     {% for hero in all_superheroes %}
+
                     <!-- Display Superhero name and Details page link -->
                     <div class="col-sm-3 p-2">
                         <dt>{{hero.name}}</dt>
@@ -38,8 +38,8 @@
                         <button class="btn btn-secondary"><a class="text-decoration-none text-white" href="{% url 'superheroes:detail' hero.id %}">Details</a></button>
                     </div>
 
+                    <!-- Edit a superhero button -->
                     <div class="col-sm-3 p-2">
-                        <!-- Edit a superhero button -->
                         <button class="btn btn-info"><a class="text-decoration-none text-white" href="{% url 'superheroes:edit_superhero' hero.id %}">Edit</a></button>
                     </div>
 
