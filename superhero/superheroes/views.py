@@ -36,6 +36,7 @@ def create(request):
 
         #input is used to create and save a new superhero in to database
         new_superhero = Superhero(name=name, alter_ego=alter_ego, primary_superpower=primary_superpower, secondary_superpower=secondary_superpower, catchphrase=catchphrase)
+        
         new_superhero.save()
 
         return HttpResponseRedirect(reverse('superheroes:index'))
@@ -51,6 +52,11 @@ def delete(request, superhero):
 
 # edits a superhero in the database
 def edit(request, superhero):
+    superhero = Superhero.objects.get(id = superhero)
+    context = {
+            'superhero': superhero
+    }
+
     if request.method == "POST":
         name = request.POST.get('name')
         alter_ego = request.POST.get('alter_ego')
@@ -73,9 +79,14 @@ def edit(request, superhero):
         # save edits to super hero
 
         edit_superhero = Superhero(name=name, alter_ego=alter_ego, primary_superpower=primary_superpower, secondary_superpower=secondary_superpower, catchphrase=catchphrase)
+
         edit_superhero.save()
 
         return HttpResponseRedirect(reverse('superheroes:index'))
 
     else:
-        return render(request, 'superheroes/edit.html')
+        #superhero = Superhero.objects.get(id = superhero)
+
+        #helps sends query results to template for display
+        return render(request, 'superheroes/edit.html', context)
+        # return render(request, 'superheroes/edit.html')

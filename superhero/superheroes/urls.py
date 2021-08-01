@@ -16,5 +16,5 @@ urlpatterns = [
     path('<int:superhero>/delete/', views.delete, name='delete'),
 
     #helps display edit page
-    path('<int:superhero>/edit/', views.edit, name='edit')
+    path('<int:superhero>/edit/', views.edit, name='edit_superhero')
 ]

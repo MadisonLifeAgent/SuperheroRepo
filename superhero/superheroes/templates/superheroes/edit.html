@@ -16,9 +16,11 @@
     </div>
 
     <div class="container p-4">
-            <form class="font-weight-bold" action="{% url 'superheroes:edit_superhero %}" method="post">
+            <form class="font-weight-bold" action="{% url 'superheroes:edit_superhero' superhero.id%}" method="post">
+                {% csrf_token %}
+
                 <!-- Display a Superhero's details using results from query and add edit box -->
-                To make an edit please type in one of the boxes below.<br>
+                To make an edit please type in one of the boxes below.<br><br>
                 {{superhero.name}}:  <input type="text" name="name" id="name" class="container m-2"><br>
 
                 {{superhero.alter_ego}}:  <input type="text" name="alter_ego" id="alter_ego" class="container m-2"><br>
