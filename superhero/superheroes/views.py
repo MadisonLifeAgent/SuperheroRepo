@@ -60,7 +60,7 @@ def edit(request, superhero):
         catchphrase = request.POST.get('catchphrase')
 
         # save edits to super hero
-        edit_superhero = Superhero(name=name, alter_ego=alter_ego, primary_superpower=primary_superpower, secondary_superpower=secondary_superpower, catchphrase=catchphrase)
+        edit_superhero = Superhero(id=superhero, name=name, alter_ego=alter_ego, primary_superpower=primary_superpower, secondary_superpower=secondary_superpower, catchphrase=catchphrase)
 
         edit_superhero.save()
 
