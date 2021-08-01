@@ -48,3 +48,34 @@ def delete(request, superhero):
     
     superhero.delete()
     return HttpResponseRedirect(reverse('superheroes:index'))
+
+# edits a superhero in the database
+def edit(request, superhero):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        alter_ego = request.POST.get('alter_ego')
+        primary_superpower = request.POST.get('primary_superpower')
+        secondary_superpower = request.POST.get('secondary_superpower')
+        catchphrase = request.POST.get('catchphrase')
+
+        # check for which fields were edited, if not then give them their current value
+        if name == None:
+            name = superhero.name
+        if alter_ego == None:
+            alter_ego = superhero.alter_ego
+        if primary_superpower == None:
+            primary_superpower = superhero.primary_superpower
+        if secondary_superpower == None:
+            secondary_superpower = superhero.secondary_superpower
+        if catchphrase == None:
+            catchphrase = superhero.catchphrase
+
+        # save edits to super hero
+
+        edit_superhero = Superhero(name=name, alter_ego=alter_ego, primary_superpower=primary_superpower, secondary_superpower=secondary_superpower, catchphrase=catchphrase)
+        edit_superhero.save()
+
+        return HttpResponseRedirect(reverse('superheroes:index'))
+
+    else:
+        return render(request, 'superheroes/edit.html')

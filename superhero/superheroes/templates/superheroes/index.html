@@ -20,7 +20,7 @@
     <div class="container p-2">
         <!-- image of favorite superhero -->
         {% load static %}
-        <img src="{% static 'images/loki.jpg' %}" alt="Loki, God of Mischief" class="rounded mx-auto d-block img-thumbnail" width="50%" height="50%">
+        <img src="{% static 'images/loki.jpg' %}" alt="Loki, God of Mischief" class="rounded mx-auto d-block img-thumbnail" width="75%" height="auto">
     </div>
 
     <div class="container p-4">
@@ -40,7 +40,7 @@
 
                     <div class="col-sm-3 p-2">
                         <!-- Edit a superhero button -->
-                        <button class="btn btn-info"><a class="text-decoration-none text-white" href="{% url 'superheroes:delete' hero.id %}">Edit (nc)</a></button>
+                        <button class="btn btn-info"><a class="text-decoration-none text-white" href="{% url 'superheroes:edit' hero.id %}">Edit</a></button>
                     </div>
 
                     <div class="col-sm-3 p-2">

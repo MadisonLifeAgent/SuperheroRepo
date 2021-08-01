@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Content Delivery Network -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Edit Superhero</title>
+</head>
+<body>
+    <div class="container p-4 bg-primary text-white">
+        <h1>Edit {{superhero.name}}</h1>
+    </div>
+
+    <div class="container p-4">
+            <form class="font-weight-bold" action="{% url 'superheroes:edit_superhero %}" method="post">
+                <!-- Display a Superhero's details using results from query and add edit box -->
+                To make an edit please type in one of the boxes below.<br>
+                {{superhero.name}}:  <input type="text" name="name" id="name" class="container m-2"><br>
+
+                {{superhero.alter_ego}}:  <input type="text" name="alter_ego" id="alter_ego" class="container m-2"><br>
+
+                {{superhero.primary_superpower}}:  <input type="text" name="primary_superpower" id="secondary_superpower" class="container m=2"><br>
+
+                {{superhero.secondary_superpower}}:  <input type="text" name="secondary_superpower" id="secondary_superpower" class="container m-2"><br>
+
+                "{{superhero.catchphrase}}":  <input type="text" name="catchphrase" id="catchphrase" class="container m-2"><br>
+
+                <!-- submit button -->
+                <input type="submit" value="Edit Superhero" class="btn btn-info mt-2 ml-2">
+
+    </div>
+            <!-- jQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
