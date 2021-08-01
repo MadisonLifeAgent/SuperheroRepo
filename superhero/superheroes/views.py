@@ -47,5 +47,4 @@ def delete(request, superhero):
     superhero = Superhero.objects.get(id = superhero)
     
     superhero.delete()
-    return render(request, 'superheroes/delete.html')
     return HttpResponseRedirect(reverse('superheroes:index'))
