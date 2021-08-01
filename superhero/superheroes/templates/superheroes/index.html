@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,8 @@
 
     <div class="container p-2">
         <!-- image of favorite superhero -->
-        <img class="rounded mx-auto d-block img-thumbnail" width="50%" height="50%" src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2020/12/loki-trailer-president.jpg" alt="Loki, God of Mischief">
+        {% load static %}
+        <img src="{% static 'images/loki.jpg' %}" alt="Loki, God of Mischief" class="rounded mx-auto d-block img-thumbnail" width="50%" height="50%">
     </div>
 
     <div class="container p-4">
