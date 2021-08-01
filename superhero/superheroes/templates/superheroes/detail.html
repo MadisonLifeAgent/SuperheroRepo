@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Content Delivery Network -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <title>Superhero Details</title>
 </head>
 <body>
-    <h1>{{superhero.name}}</h1>
+    <div class="container">
+        <h1>{{superhero.name}}</h1>
 
-    <ul>
-        <!-- Display a Superhero's details using results from query -->
-        <li>Alter Ego: {{superhero.alter_ego}}</li>
-        <li>Primary Superpower: {{superhero.primary_superpower}}</li>
-        <li>Secondary Superpower: {{superhero.secondary_superpower}}</li>
-        <li>Catchphrase: "{{superhero.catchphrase}}"</li>
-    </ul>
+            <ul>
+                <!-- Display a Superhero's details using results from query -->
+                <li>Alter Ego: {{superhero.alter_ego}}</li>
+                <li>Primary Superpower: {{superhero.primary_superpower}}</li>
+                <li>Secondary Superpower: {{superhero.secondary_superpower}}</li>
+                <li>Catchphrase: "{{superhero.catchphrase}}"</li>
+            </ul>
+    </div>
+            <!-- jQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
