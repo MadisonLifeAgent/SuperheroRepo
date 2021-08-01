@@ -11,21 +11,25 @@
     <title>Add a Superhero</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container p-4 bg-primary text-white">
+        <h1>Add a Superhero</h1>
+    </div>
+
+    <div class="container p-4">
         <!-- Form to add a new superhero -->
-        <form action="{% url 'superheroes:new_superhero' %}" method="post">
+        <form class="font-weight-bold" action="{% url 'superheroes:new_superhero' %}" method="post">
             {% csrf_token %}
 
-            Name:  <input type="text" name="name" id="name"><br>
+            Name:  <input type="text" name="name" id="name" required class="container m-2"><br>
 
-            Alter Ego:  <input type="text" name="alter_ego" id="alter_ego"><br>
+            Alter Ego:  <input type="text" name="alter_ego" id="alter_ego" required class="container m-2"><br>
             
-            Primary Superpower:  <input type="text" name="primary_superpower" id="primary_superpower"><br>
+            Primary Superpower:  <input type="text" name="primary_superpower" id="primary_superpower" required class="container m-2"><br>
             
-            Secondary Superpower:  <input type="text" name="secondary_superpower" id="secondary_superpower"><br>
+            Secondary Superpower:  <input type="text" name="secondary_superpower" id="secondary_superpower" required class="container m-2"><br>
             
-            Catchphrase:  <input type="text" name="catchphrase" id="catchphrase"><br>
-            <input type="submit" value="Submit Superhero">
+            Catchphrase:  <input type="text" name="catchphrase" id="catchphrase" required class="container m-2"><br>
+            <input type="submit" value="Submit Superhero" class="btn btn-success mt-2 ml-2">
             
         </form>
 

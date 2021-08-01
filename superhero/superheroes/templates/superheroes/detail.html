@@ -11,16 +11,22 @@
     <title>Superhero Details</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container p-4 bg-primary text-white">
         <h1>{{superhero.name}}</h1>
+    </div>
 
-            <ul>
+    <div class="container p-4">
+            <dl>
                 <!-- Display a Superhero's details using results from query -->
-                <li>Alter Ego: {{superhero.alter_ego}}</li>
-                <li>Primary Superpower: {{superhero.primary_superpower}}</li>
-                <li>Secondary Superpower: {{superhero.secondary_superpower}}</li>
-                <li>Catchphrase: "{{superhero.catchphrase}}"</li>
-            </ul>
+                <dt>Alter Ego:</dt>
+                    <dd>{{superhero.alter_ego}}</dd>
+                <dt>Primary Superpower:</dt>
+                    <dd>{{superhero.primary_superpower}}</dd>
+                <dt>Secondary Superpower:</dt>
+                    <dd>{{superhero.secondary_superpower}}</dd>
+                <dt>Catchphrase:</dt>
+                    <dd>"{{superhero.catchphrase}}"</dd>
+            </dl>
     </div>
             <!-- jQuery -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

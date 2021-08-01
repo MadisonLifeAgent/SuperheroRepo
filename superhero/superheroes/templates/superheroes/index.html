@@ -11,25 +11,46 @@
     <title>Superheroes App</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container p-4 bg-primary text-white">
         <h1>Superheroes List</h1>
+    </div>
 
-            <ul>
-                <!-- Display Superhero list using results from query -->
-                {% for hero in all_superheroes %}
-                <!-- Display Superhero name and Details page link -->
-                <li>{{hero.name}}</li>
-                <button><a href="{% url 'superheroes:detail' hero.id %}">Details</a></button>
-                
-                    <!-- Delete a superhero button -->
-                <button><a href="{% url 'superheroes:delete' hero.id %}">Delete Superhero</a></button>
-                {% endfor %}
-            </ul>
+    <div class="container p-4">
+            <dl>
+                <div class="row">
+                    
+                    <!-- Display Superhero list using results from query -->
+                    {% for hero in all_superheroes %}
+                    <!-- Display Superhero name and Details page link -->
+                    <div class="col-sm-3 p-2">
+                        <dt>{{hero.name}}</dt>
+                    </div>
+
+                    <div class="col-sm-3 p-2">
+                        <button class="btn btn-secondary"><a class="text-decoration-none text-white" href="{% url 'superheroes:detail' hero.id %}">Details</a></button>
+                    </div>
+
+                    <div class="col-sm-3 p-2">
+                        <!-- Edit a superhero button -->
+                        <button class="btn btn-info"><a class="text-decoration-none text-white" href="{% url 'superheroes:delete' hero.id %}">Edit (nc)</a></button>
+                    </div>
+
+                    <div class="col-sm-3 p-2">
+                        <!-- Delete a superhero button -->
+                        <button class="btn btn-danger"><a class="text-decoration-none text-white" href="{% url 'superheroes:delete' hero.id %}">Delete</a></button>
+                    </div>
+                    {% endfor %}
+                </dl>
+    
 
         <!-- Add a superhero button -->
-        <button><a href="{% url 'superheroes:new_superhero' %}">Add a Superhero</a></button>
-    
-    </div>    
+        <button class="btn btn-success"><a class="text-decoration-none text-white" href="{% url 'superheroes:new_superhero' %}">Add a Superhero</a></button>
+
+    </div>
+
+    <div class="container p-4">
+        <img class="rounded mx-auto d-block img-fluid" src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2020/12/loki-trailer-president.jpg" alt="Loki, God of Mischief">
+    </div>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
