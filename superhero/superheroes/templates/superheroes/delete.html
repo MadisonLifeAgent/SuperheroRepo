@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Superhero</title>
+    <title>Deleted Superhero</title>
 </head>
 <body>
-    <h1>Delete a Superhero</h1>
+    <h1>{{superhero.name}} has been deleted!</h1>
 
-    <form action="{% url 'superheroes:delete_superhero' %}" method="post">
-        {% csrf_token %}
-
-        Please confirm if you would like to delete {{superhero.name}}:<input type="text" name="response" id="response" value="yes / no"><br>
-        <input type="submit" value="submit response">
-    </form>
+    <button><a href="{% url 'superheroes:index %}">Home</a></button>
 </body>
 </html>

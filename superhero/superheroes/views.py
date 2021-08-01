@@ -45,21 +45,7 @@ def create(request):
 # deletes a super hero from superhero database
 def delete(request, superhero):
     superhero = Superhero.objects.get(id = superhero)
-    context = {
-        'superhero': superhero
-    }
-    #helps sends query results to template for display
-    return render(request, 'superheroes/delete.html', context)
     
-    if request.method == "POST":
-        #gets input from user and checks it
-        response = request.POST.get('response')
-
-        if response == "yes":
-            superhero.delete()
-
-        return HttpResponseRedirect(reverse('superheroes:index'))
-
-    else:
-        return render(request, 'superheroes/indext.html')
-
+    superhero.delete()
+    return render(request, 'superheroes/delete.html')
+    return HttpResponseRedirect(reverse('superheroes:index'))

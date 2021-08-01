@@ -13,5 +13,5 @@ urlpatterns = [
     path('create/', views.create, name='new_superhero'),
 
     #helps display delete page
-    path('<int:superhero>/', views.delete, name='delete')
+    path('<int:superhero>/delete/', views.delete, name='delete')
 ]
